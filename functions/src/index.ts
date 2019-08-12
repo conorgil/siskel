@@ -10,8 +10,7 @@ export const save = functions.https.onRequest((request, response) => {
     value: request.body.value,
 
     // Additional values
-    received: new Date().toISOString(),
-    ip: request.headers["fastly-client-ip"]
+    received: new Date().toISOString()
   };
 
   // Validate data
