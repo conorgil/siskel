@@ -9,6 +9,9 @@ export const save = functions.https.onRequest((request, response) => {
     key: request.body.key,
     value: request.body.value,
 
+    // Optional (TODO: make it required like the other fields)
+    sent: request.body.sent,
+
     // Additional values
     received: new Date().toISOString()
   };
