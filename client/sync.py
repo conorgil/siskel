@@ -27,7 +27,7 @@ def main():
     cursor.execute(CREATE_TABLE)
 
     # Do we have data stored there already?
-    cursor.execute("SELECT MAX(id) FROM events")
+    cursor.execute("SELECT MAX(received) FROM events")
     latest = cursor.fetchone()[0]
 
     cred = credentials.Certificate(KEY_FILE)
