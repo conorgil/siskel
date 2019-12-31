@@ -11,9 +11,17 @@ const db = admin.firestore();
 const collection = db.collection("logs");
 
 /**
- * Store the given document in the logs collection
- * @param document an object populated with the values to store
+ * Store the given documents in the logs collection
+ * @param logs an array of log entries to be stored
  */
-export const store = function(document: Object) {
-  return collection.add(document);
+export const store = function(logs: Object[]) {
+  // Use batch for atomic writes
+  const batch = db.batch();
+
+  for (const log of logs) {
+    const newLogRef = collection.doc();
+    batch.set(newLogRef, log);
+  }
+
+  return batch.commit();
 };
