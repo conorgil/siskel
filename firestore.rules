@@ -6,7 +6,7 @@ service cloud.firestore {
     }
 
     match /logs/{item} {
-        allow read: if request.auth.token.email_verified == true && (request.auth.token.email == 'YOUR_EMAIL_HERE' || request.auth.token.email == 'ANOTHER_EMAIL_HERE');
+        allow read: if request.auth.token.email_verified == true && request.auth.token.email in [EMAIL_ONE, EMAIL_TWO, EMAIL_THREE];
     }
   }
 }
