@@ -9,6 +9,6 @@
   "author": "",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "firebase-tools": "^7.2.2"
+    "firebase-tools": "^7.16.2"
   }
 }
