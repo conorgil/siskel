@@ -55,6 +55,6 @@ export const save = functions.https.onRequest((request, response) => {
     })
     .catch((e) => {
       response.sendStatus(500);
-      console.log(`Error saving to the DB. Request: ${body}. Error: ${e}.`);
+      console.log(`Error saving to the DB. Request: ${JSON.stringify(body)}. Error: ${e}.`);
     });
 });
